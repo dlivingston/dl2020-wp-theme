@@ -1,5 +1,7 @@
 /node_modules
 .DS_Store
 wp-content/*
-!wp-content/themes/dl2020
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/dl2020/
 
