@@ -1,0 +1,131 @@
+h1.site-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--link-color);
+}
+h2.site-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.site-description {
+    max-width: 800px;
+    margin: 1rem 10vw 1.5rem 10vw;
+    @media (min-width: 800px) {
+        margin: 1rem auto 1.5rem auto;
+    }
+}
+.main-navigation {
+    margin: 0 1rem 0.75rem;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (min-width: 800px) {
+        margin: 0 auto 0.75rem;
+        justify-content: space-between;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .page_item {
+            margin-right: 1rem;
+            font-weight: 600;
+            font-size: 1.125rem; 
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 auto 1.5rem;
+	max-width: 800px;
+	background-color: var(--content-bg);
+	transition: background-color .6s;
+	padding: 1.5rem;
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+.content-area {
+	margin: 0 1rem 1.5rem;
+    max-width: 800px;
+    width: calc(100% - 2rem);
+    max-width: 800px;
+	
+    .page, .post {
+        background-color: var(--content-bg);
+        transition: background-color .6s;
+        padding: 0.75rem;
+        p {
+            font-family: 'IBM Plex Serif', serif;
+        }
+    }
+    .post {
+        margin-bottom: 1.5rem;
+    }
+    @media (min-width: 800px) {
+        width: 100%;
+        margin: 0 auto 1.5rem;
+        .page, .post {
+            padding: 1.5rem;
+        }
+    }
+}
+
+.more-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.post-thumbnail {
+    max-height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.comments-area {
+	margin: 0 auto 1.5rem;
+	max-width: 800px;
+	background-color: var(--content-bg);
+	transition: background-color .6s;
+	padding: 1.5rem;
+}
+
+.entry-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-footer {
+    margin: 0;
+    width: 100%;
+    max-width: 800px;
+    padding: 1.5rem;
+    background-color: var(--content-bg);
+	transition: background-color .6s;
+    @media (min-width: 800px) {
+        margin: 0 auto;
+    }
+}

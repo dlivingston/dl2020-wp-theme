@@ -1,0 +1,10 @@
+// @import 'vars';
+body {
+	--body-bg: var(--lt-body-bg);
+    --content-bg: var(--lt-content-bg);
+    --content-color:  var(--lt-content-color);
+    --link-color: var(--lt-link-color);
+	--link-hover: var(--lt-link-hover);
+}
+
+@import 'code_styles_light';
