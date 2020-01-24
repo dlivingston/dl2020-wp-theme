@@ -30,5 +30,9 @@
   },
   "keywords": [],
   "author": "Don Livingston",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dlivingston/dl2020-wp-theme.git"
+  },
   "license": "ISC"
 }
