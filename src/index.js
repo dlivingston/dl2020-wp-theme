@@ -17,7 +17,6 @@ if(window.localStorage.dl_local_theme && window.localStorage.dl_local_theme === 
 function toggleTheme(theme) {
     let newTheme = theme;
     window.localStorage.dl_local_theme = document.documentElement.dataset.theme = newTheme;
-    document.getElementById('dl2020-light-theme-css').disabled = (newTheme === 'dark') ? true : false;
 }
 
 window.onload = (event) => {

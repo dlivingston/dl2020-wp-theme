@@ -20,7 +20,15 @@ body {
 	--link-color: var(--dt-link-color);
 	--link-hover: var(--dt-link-hover);
 }
-
+[data-theme=light] {
+    body {
+        --body-bg: var(--lt-body-bg);
+        --content-bg: var(--lt-content-bg);
+        --content-color:  var(--lt-content-color);
+        --link-color: var(--lt-link-color);
+        --link-hover: var(--lt-link-hover);
+    }
+}
 
 body {
 	background-color: var(--body-bg);

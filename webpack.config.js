@@ -3,16 +3,12 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 module.exports = {
   entry: { 
-    index: ['./src/index.js'],
-    style: ['./src/styles/main.scss'],
-    light_theme: ['./src/styles/light_theme.scss']
+    main: ['./src/index.js', './src/styles/main.scss']
  },
   plugins: [
-    new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].css"
     })
@@ -61,22 +57,6 @@ module.exports = {
         sourceMap: true
       }),
       new OptimizeCSSAssetsPlugin({})
-    ],
-    splitChunks: {
-      cacheGroups: {
-        mainStyles: {
-          name: 'style',
-          test: (m, c, entry = 'style') => m.type === 'css-loader',
-          chunks: 'all',
-          enforce: true,
-        },
-        lightStyles: {
-          name: 'light_theme',
-          test: (m, c, entry = 'light_theme') => m.type === 'css-loader',
-          chunks: 'all',
-          enforce: true,
-        }
-      }
-    }
+    ]
   }
 }

@@ -5,9 +5,13 @@
     --dodger: #41ADFF;
     --jellybean: #2874ad;
     --persian-red: #d23430;
+    --black-pearl: #1d252c;
+    --bunker: #171d23;
 
-    --dt-body-bg: #0d2538;
-    --dt-content-bg: #0f2d44;
+    // --dt-body-bg: #0d2538;
+    // --dt-content-bg: #0f2d44;
+    --dt-body-bg: var(--bunker);
+    --dt-content-bg: var(--black-pearl);
     --dt-title-color: #ffffff;
     --dt-content-color: #ced8de;
     --dt-link-color:  var(--sunglow);

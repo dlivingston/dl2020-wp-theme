@@ -122,9 +122,9 @@ add_action( 'widgets_init', 'dl2020_widgets_init' );
 function dl2020_scripts() {
 	wp_enqueue_style( 'dl2020-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'dl2020-light-theme', get_template_directory_uri() . '/light_theme.css' );
+	wp_enqueue_style( 'dl2020-style-main', get_stylesheet_directory_uri(). '/main.css' );
 
-	wp_enqueue_script( 'dl2020-index', get_template_directory_uri() . '/index.js', array(), '20191111', false );
+	wp_enqueue_script( 'dl2020-index', get_template_directory_uri() . '/main.js', array(), '20200606', false );
 
 	wp_enqueue_script( 'dl2020-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
