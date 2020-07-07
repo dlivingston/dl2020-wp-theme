@@ -72,7 +72,11 @@ h2.site-title {
     max-width: 800px;
     width: calc(100% - 2rem);
     max-width: 800px;
-	
+	.site-portfolio {
+        .page p {
+            font-family: 'Raleway', sans-serif;
+        }
+    }
     .page, .post {
         background-color: var(--content-bg);
         transition: background-color .6s;

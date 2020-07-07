@@ -22,7 +22,7 @@
 	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 
-<body <?php body_class(); ?>  <?php if ( is_front_page() && is_home() ) : ?> data-state="loading" <?php else : ?> data-state="" <?php endif; ?> >
+<body <?php body_class(); ?>  <?php if ( is_front_page() || is_home() ) : ?> data-state="loading" <?php else : ?> data-state="" <?php endif; ?> >
 <div class="wave-bg">
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2161.53 987.97" id="wave">
 		<path class="line l-1" d="M.5,81C669.38-223.18,688,1518.56,2161,.5"/>
@@ -67,7 +67,7 @@
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
+			if ( is_front_page() || is_home() ) :
 				?>
 				<div class="logo-wrapper main">
 					<svg version="1.1" id="dl_logo_animate" viewBox="0 0 600 600">

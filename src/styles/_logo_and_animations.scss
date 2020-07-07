@@ -402,3 +402,59 @@ body {
         
     }
 }
+.circle-meter {
+    width: 120px;
+    height: 120px;
+    overflow: visible;
+    circle {
+        transform-origin: center;
+        fill: none;
+        stroke-width: 12px;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        &.circle-bg {
+            stroke: var(--body-bg);
+            z-index: 1;
+        }
+        &.meter {
+            stroke-dasharray: 352, 352;
+            stroke-dashoffset: 351;
+            transform: rotate(-90deg);
+            transition: stroke-dashoffset 1.5s ease-in-out 0s;
+            &[data-meter-strength="100"] {
+                stroke: var(--dodger);
+            }
+            &[data-meter-strength="90"], &[data-meter-strength="80"] {
+                stroke: var(--caribbean-green);
+            }
+            &[data-meter-strength="50"] {
+                stroke: var(--sunglow);
+            }
+            &[data-meter-strength="25"] {
+                stroke: var(--persian-red);
+            }
+        }
+    }
+
+}
+[data-scroll-view=view] {
+    .circle-meter {
+        &>circle.meter {
+            &[data-meter-strength="100"] {
+                stroke-dashoffset: 0;
+            }
+            &[data-meter-strength="90"] {
+                stroke-dashoffset: 35.2;
+            }
+            &[data-meter-strength="80"] {
+                stroke-dashoffset: 70.4;
+            }
+            &[data-meter-strength="50"] {
+                stroke-dashoffset: 176;
+            }
+            &[data-meter-strength="25"] {
+                stroke-dashoffset: 264;
+            }
+        }
+    }
+}

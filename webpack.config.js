@@ -21,12 +21,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/, 
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
+            presets: [
+              ['@babel/preset-env', {
+                "targets": {
+                  "node": "10"
+                }
+              }], 
+              '@babel/preset-react'],
+            "plugins": ['styled-jsx/babel']
           }
         }
       },
@@ -49,6 +56,8 @@ module.exports = {
         ]
       }
     ]
+  },resolve: {
+    extensions: ['.js', '.jsx', '.json']
   },
   optimization: {
     minimizer: [

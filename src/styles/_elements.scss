@@ -15,7 +15,9 @@ html {
 
 body {
 	--body-bg: var(--dt-body-bg);
+	--body-bg-rgb: var(--dt-body-bg-rgb);
     --content-bg: var(--dt-content-bg);
+    --content-bg-rgb: var(--dt-content-bg-rgb);
     --content-color:  var(--dt-content-color);
 	--link-color: var(--dt-link-color);
 	--link-hover: var(--dt-link-hover);
@@ -23,7 +25,9 @@ body {
 [data-theme=light] {
     body {
         --body-bg: var(--lt-body-bg);
+		--body-bg-rgb: var(--lt-body-bg-rgb);
         --content-bg: var(--lt-content-bg);
+		--content-bg-rgb: var(--lt-content-bg-rgb);
         --content-color:  var(--lt-content-color);
         --link-color: var(--lt-link-color);
         --link-hover: var(--lt-link-hover);

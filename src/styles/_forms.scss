@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
+button, a.btn,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -16,7 +16,7 @@ input[type="submit"] {
 	font-weight: 200;
 }
 
-button:hover,
+button:hover, a.btn:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
@@ -25,6 +25,7 @@ input[type="submit"]:hover {
 }
 
 button:active, button:focus,
+a.btn:active, a.btn:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,

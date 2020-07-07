@@ -1,0 +1,50 @@
+
+
+.meters {
+    display: flex;
+    justify-content: space-around;
+    .meter-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .card {
+        flex: 0 0 50%;
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        &>img {
+            height: 100%;
+            width: auto;
+            max-width: initial;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+        }
+        .card-info {
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            text-align: center;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        &:hover {
+            .card-info {
+                background-color: rgba(var(--content-bg-rgb), 0.85);
+                opacity: 1;
+            }
+            
+        }
+    }
+}
