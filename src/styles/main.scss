@@ -33,6 +33,7 @@
 @import 'forms';
 @import 'theme-toggle';
 @import 'logo_and_animations';
+@import 'portfolio';
 @import 'wp-components';
 @import 'code_styles_dark';
 /*--------------------------------------------------------------
@@ -43,10 +44,12 @@
 --------------------------------------------------------------*/
 a, a:visited {
 	color: var(--link-color);
+	transition: color .6s;
 }
 
 a:hover, a:focus, a:active {
 	color: var(--link-hover);
+	transition: color .2s;
 }
 
 a:focus {

@@ -5,19 +5,28 @@
     --dodger: #41ADFF;
     --jellybean: #2874ad;
     --persian-red: #d23430;
+    --flame: #E34F26;
     --black-pearl: #1d252c;
     --bunker: #171d23;
+    --caribbean-green: #00C58E;
+    --deep-sea: #108775;
+    --buttery-white: #eee8d5;
+    --old-lace: #FDF6E3;
 
     // --dt-body-bg: #0d2538;
     // --dt-content-bg: #0f2d44;
     --dt-body-bg: var(--bunker);
+    --dt-body-bg-rgb: 23, 29, 35; 
     --dt-content-bg: var(--black-pearl);
+    --dt-content-bg-rgb: 29, 37, 44;
     --dt-title-color: #ffffff;
     --dt-content-color: #ced8de;
     --dt-link-color:  var(--sunglow);
     --dt-link-hover: var(--tulip);
-    --lt-body-bg: #fdf6e3;
-    --lt-content-bg: #eee8d5;
+    --lt-body-bg: var(--buttery-white);
+    --lt-body-bg-rgb: 238, 232, 213;
+    --lt-content-bg: var(--old-lace);
+    --lt-content-bg-rgb: 253, 246, 227;
     --lt-title-color: #111111;
     --lt-content-color: #4e5e64;
     --lt-link-color:  var(--jellybean);
@@ -25,3 +34,24 @@
 
     //--dt-content-bg: #274053;
 }
+
+$hamburger-padding-x           : 15px !default;
+$hamburger-padding-y           : 15px !default;
+$hamburger-layer-width         : 40px !default;
+$hamburger-layer-height        : 4px !default;
+$hamburger-layer-spacing       : 6px !default;
+$hamburger-layer-color         : var(--link-color) !default;
+$hamburger-layer-border-radius : 4px !default;
+$hamburger-hover-opacity       : 1 !default;
+$hamburger-active-layer-color  : var(--link-hover) !default;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter   : false !default;
+$hamburger-hover-filter       : opacity(50%) !default;
+$hamburger-active-hover-filter: $hamburger-hover-filter !default;
+$hamburger-types: (
+  spin
+) !default;

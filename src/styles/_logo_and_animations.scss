@@ -168,6 +168,7 @@
         stroke-width: 64;
         stroke-miterlimit: 10;
         stroke-linecap: square;
+        transition: stroke 0.6s;
     }
     .d-line {
         stroke-dasharray: 1450;
@@ -357,22 +358,29 @@ body {
             transition: transform 0.3s ease;
             transform: translateY(0);
         }
-        .site-title, .site-description, .main-navigation {
-            transition: opacity 0.5s ease, transform 0.5s ease, filter 0.75s ease;
+        .site-title, .site-description {            
             transform: translateY(0);
             filter: blur(0);
             opacity: 1;
         }
         .site-title {
-            transition-delay: 0.5s;
+            transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s, filter 0.75s ease 0.5s, color 0.6s;
         }
-        .site-description, .main-navigation {
-            transition-delay: 0.75s;
+        .site-description {
+            transition: opacity 0.5s ease 0.75s, transform 0.5s ease 0.75s, filter 0.75s ease 0.75s;
         }
     }
+
     .site-content {
         transition: opacity 0.85s ease, transform 0.75s ease;
         transform: translateY(0);
+        opacity: 1;
+    }
+    .main-navigation {
+        transition: opacity 0.5s ease 0.75s, transform 0.5s ease 0.75s, filter 0.75s ease 0.75s, background-color .6s, border-bottom-color .6s;
+        // transition-delay: 0.75s;
+        transform: translateY(0);
+        filter: blur(0);
         opacity: 1;
     }
     &[data-state=loading], &[data-state=first-load] {
@@ -389,16 +397,93 @@ body {
                     transform: translateY(20vh);
                 }
             }
-            .site-title, .site-description, .main-navigation {
+            .site-title, .site-description {
                 opacity: 0;
                 transform: translateY(2rem);
                 filter: blur(2px);
             }
+            
         }
         .site-content {
             opacity: 0;
             transform: translateY(50%);
         }
-        
+        .main-navigation {
+            opacity: 0;
+            transform: translateY(-50px);
+            filter: blur(2px);
+        }
     }
+    
+}
+.circle-meter {
+    width: 120px;
+    height: 120px;
+    overflow: visible;
+    circle {
+        transform-origin: center;
+        fill: none;
+        stroke-width: 12px;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        &.circle-bg {
+            stroke: var(--body-bg);
+            z-index: 1;
+        }
+        &.meter {
+            stroke-dasharray: 352, 352;
+            stroke-dashoffset: 351;
+            transform: rotate(-90deg);
+            transition: stroke-dashoffset 1.5s ease-in-out 0s;
+            &[data-meter-strength="100"] {
+                stroke: var(--dodger);
+            }
+            &[data-meter-strength="90"], &[data-meter-strength="80"] {
+                stroke: var(--caribbean-green);
+            }
+            &[data-meter-strength="50"] {
+                stroke: var(--sunglow);
+            }
+            &[data-meter-strength="25"] {
+                stroke: var(--persian-red);
+            }
+        }
+    }
+
+}
+.skills[data-scroll-view=view] {
+    .circle-meter {
+        &>circle.meter {
+            &[data-meter-strength="100"] {
+                stroke-dashoffset: 0;
+            }
+            &[data-meter-strength="90"] {
+                stroke-dashoffset: 35.2;
+            }
+            &[data-meter-strength="80"] {
+                stroke-dashoffset: 70.4;
+            }
+            &[data-meter-strength="50"] {
+                stroke-dashoffset: 176;
+            }
+            &[data-meter-strength="25"] {
+                stroke-dashoffset: 264;
+            }
+        }
+    }
+    .skill-bars {
+        .skill-meter {
+            &[aria-valuenow="95"] { transform: scaleX(0.95) }
+            &[aria-valuenow="90"] { transform: scaleX(0.9) }
+            &[aria-valuenow="80"] { transform: scaleX(0.8) }
+            &[aria-valuenow="70"] { transform: scaleX(0.7) }
+            &[aria-valuenow="60"] { transform: scaleX(0.6) }
+            &[aria-valuenow="50"] { transform: scaleX(0.5) }
+            &[aria-valuenow="40"] { transform: scaleX(0.4) }
+            &[aria-valuenow="30"] { transform: scaleX(0.3) }
+            &[aria-valuenow="20"] { transform: scaleX(0.2) }
+            &[aria-valuenow="10"] { transform: scaleX(0.1) }   
+        }
+    }
+
 }

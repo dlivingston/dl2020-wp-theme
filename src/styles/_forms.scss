@@ -1,30 +1,30 @@
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
+button, a.btn,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
 	border-color: var(--link-color);
 	border-radius: 0;
-	background: var(--body-bg);
+	background-color: var(--body-bg);
 	color: var(--link-color);
 	font-size: 1rem;
 	line-height: 1;
 	padding: 0.5rem 1.25rem;
 	font-weight: 200;
+	text-decoration: none;
+	transition: color .3s,background-color .3s;
+	&:hover {
+		color: var(--body-bg);
+		background: var(--link-color);
+	}
 }
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: var(--link-hover);
-	color: var(--link-hover);
-}
 
 button:active, button:focus,
+a.btn:active, a.btn:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,

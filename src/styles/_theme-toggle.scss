@@ -5,11 +5,13 @@
     padding: 5px;
     font-weight: 600;
     color: var(--link-color);
+    transition: color .6s;
     .toggle-icon {
         width: 14px;
         height: 14px;
         path {
             fill: var(--link-color);
+            transition: fill .6s;
         }
     }
     .toggle-switch {
@@ -31,6 +33,7 @@
                 height: 20px;
                 border-radius: 20px;
                 border: 1px solid var(--link-color);
+                transition: border-color .6s;
                 background-color: transparent;
             }
             &:after {
@@ -44,7 +47,7 @@
                 top: 2px;
                 left: 2px;
                 transform: translateX(0);
-                transition: transform 0.3s ease;
+                transition: transform 0.3s ease, background-color .6s;
             }
         }
         input[type=checkbox] {
@@ -58,7 +61,6 @@
             label.switch {
                 &:after {
                     transform: translateX(28px);
-                    transition: transform 0.3s ease;
                 }
             }
         }

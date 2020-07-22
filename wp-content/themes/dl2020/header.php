@@ -18,11 +18,12 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+	<meta name="pinterest" content="nopin" />
 	<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 
-<body <?php body_class(); ?>  <?php if ( is_front_page() && is_home() ) : ?> data-state="loading" <?php else : ?> data-state="" <?php endif; ?> >
+<body <?php body_class(); ?>  <?php if ( is_front_page() || is_home() ) : ?> data-state="loading" <?php else : ?> data-state="" <?php endif; ?> >
 <div class="wave-bg">
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2161.53 987.97" id="wave">
 		<path class="line l-1" d="M.5,81C669.38-223.18,688,1518.56,2161,.5"/>
@@ -60,14 +61,52 @@
 	</svg>
 </div>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dl2020' ); ?></a>
-
+	<nav id="site-navigation" class="main-navigation">
+		<div class="mobile-menu-toggle">
+			<button class="hamburger hamburger--spin" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+		</div>
+		<div class="inner-nav">
+			<div class="menu-wrapper">
+				<div id="default_menu" class="default-menu">
+					<a id="home-link" class="menu-link" href="/">
+						<svg version="1.1" class="dl-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+							<path class="d" d="m 10.1,30 28,0 c 3.8,0.2 6.8,0.9 9.1,2.2 2.6,1.5 4.6,3.6 6.1,6.5 1.5,2.9 2.3,6.3 2.3,10.4 0,4 -0.7,7.5 -2.2,10.7 -1.4,3.1 -3.6,5.6 -6.3,7.4 -2.8,1.8 -6.6,2.7 -11.4,2.7 l -16.5,0 0,-24.5 8.3,0 0,18.8 6.2,0 c 3.2,0 5.7,-0.5 7.4,-1.5 1.7,-1 3.1,-2.7 4.1,-5.1 1,-2.4 1.5,-5.1 1.5,-8 0,-2.8 -0.5,-5.3 -1.5,-7.5 -1,-2.2 -2.3,-3.8 -4,-4.9 -1.7,-1.1 -4.6,-1.7 -8.7,-1.7 l -5,0 -16.3,0 C 9.5,40 8.6,44.9 8.6,50 8.6,72.9 27.2,91.5 50.1,91.5 61.3,91.5 71.5,87 79,79.8 l 11.3,0 C 81,92 66.5,100 50,100 l 0,0 C 22.4,100 0,77.6 0,50 l 0,0 C 0,42.9 1.5,36.2 4.2,30 l 5.9,0 z" />
+							<path class="l" d="m 93.4,70 -7,0 -24.2,0 0,-40 8.3,0 0,34.3 18.5,0 C 90.7,59.8 91.5,55 91.5,50 91.5,27.1 72.9,8.5 50,8.5 38.7,8.5 28.5,13 21,20.3 l -11.2,0 C 18.9,8 33.5,0 50,0 l 0,0 c 23.9,0 43.9,16.8 48.8,39.2 0.8,3.5 1.2,7 1.2,10.8 0,7.1 -1.5,13.9 -4.2,20 l -9.5,0 0,0 7.1,0 z" />
+						</svg>
+					</a>
+				</div>
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				) );
+				?>
+			</div>
+			<div class="theme-toggle-wrapper">
+				<svg class="toggle-icon light" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1472 896q0-117-45.5-223.5t-123-184-184-123-223.5-45.5-223.5 45.5-184 123-123 184-45.5 223.5 45.5 223.5 123 184 184 123 223.5 45.5 223.5-45.5 184-123 123-184 45.5-223.5zm276 277q-4 15-20 20l-292 96v306q0 16-13 26-15 10-29 4l-292-94-180 248q-10 13-26 13t-26-13l-180-248-292 94q-14 6-29-4-13-10-13-26v-306l-292-96q-16-5-20-20-5-17 4-29l180-248-180-248q-9-13-4-29 4-15 20-20l292-96v-306q0-16 13-26 15-10 29-4l292 94 180-248q9-12 26-12t26 12l180 248 292-94q14-6 29 4 13 10 13 26v306l292 96q16 5 20 20 5 16-4 29l-180 248 180 248q9 12 4 29z"/>
+				</svg>
+				<div class="toggle-switch">
+					<label for="theme-toggle" class="switch">
+						<input type="checkbox" name="theme-toggle" id="theme-toggle">
+					</label>
+				</div>
+				<svg class="toggle-icon light" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1390 1303q-54 9-110 9-182 0-337-90t-245-245-90-337q0-192 104-357-201 60-328.5 229t-127.5 384q0 130 51 248.5t136.5 204 204 136.5 248.5 51q144 0 273.5-61.5t220.5-171.5zm203-85q-94 203-283.5 324.5t-413.5 121.5q-156 0-298-61t-245-164-164-245-61-298q0-153 57.5-292.5t156-241.5 235.5-164.5 290-68.5q44-2 61 39 18 41-15 72-86 78-131.5 181.5t-45.5 218.5q0 148 73 273t198 198 273 73q118 0 228-51 41-18 72 13 14 14 17.5 34t-4.5 38z"/>
+				</svg>
+			</div>
+		</div>
+	</nav><!-- #site-navigation -->
 	<header id="masthead" class="site-header">
 		
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
+			if ( is_front_page() || is_home() ) :
 				?>
 				<div class="logo-wrapper main">
 					<svg version="1.1" id="dl_logo_animate" viewBox="0 0 600 600">
@@ -128,27 +167,7 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-			<div class="theme-toggle-wrapper">
-				<svg class="toggle-icon light" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-					<path d="M1472 896q0-117-45.5-223.5t-123-184-184-123-223.5-45.5-223.5 45.5-184 123-123 184-45.5 223.5 45.5 223.5 123 184 184 123 223.5 45.5 223.5-45.5 184-123 123-184 45.5-223.5zm276 277q-4 15-20 20l-292 96v306q0 16-13 26-15 10-29 4l-292-94-180 248q-10 13-26 13t-26-13l-180-248-292 94q-14 6-29-4-13-10-13-26v-306l-292-96q-16-5-20-20-5-17 4-29l180-248-180-248q-9-13-4-29 4-15 20-20l292-96v-306q0-16 13-26 15-10 29-4l292 94 180-248q9-12 26-12t26 12l180 248 292-94q14-6 29 4 13 10 13 26v306l292 96q16 5 20 20 5 16-4 29l-180 248 180 248q9 12 4 29z"/>
-				</svg>
-				<div class="toggle-switch">
-					<label for="theme-toggle" class="switch">
-						<input type="checkbox" name="theme-toggle" id="theme-toggle">
-					</label>
-				</div>
-				<svg class="toggle-icon light" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-					<path d="M1390 1303q-54 9-110 9-182 0-337-90t-245-245-90-337q0-192 104-357-201 60-328.5 229t-127.5 384q0 130 51 248.5t136.5 204 204 136.5 248.5 51q144 0 273.5-61.5t220.5-171.5zm203-85q-94 203-283.5 324.5t-413.5 121.5q-156 0-298-61t-245-164-164-245-61-298q0-153 57.5-292.5t156-241.5 235.5-164.5 290-68.5q44-2 61 39 18 41-15 72-86 78-131.5 181.5t-45.5 218.5q0 148 73 273t198 198 273 73q118 0 228-51 41-18 72 13 14 14 17.5 34t-4.5 38z"/>
-				</svg>
-			</div>
-		</nav><!-- #site-navigation -->
+		
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
