@@ -1,8 +1,8 @@
 const path = require('path');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: { 
@@ -29,7 +29,10 @@ module.exports = {
             presets: [
               ['@babel/preset-env', {
                 "targets": {
-                  "node": "10"
+                  "node": "10",
+                  "chrome": "84",
+                  "firefox": "78",
+                  "safari": "13"
                 }
               }], 
               '@babel/preset-react'],
@@ -60,8 +63,9 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json']
   },
   optimization: {
+    minimize: true,
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         test: /\.js(\?.*)?$/i,
         sourceMap: true
       }),
