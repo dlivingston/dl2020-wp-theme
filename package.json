@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "date-fns": "^2.15.0",
-    "highlight.js": "^9.18.1",
+    "highlight.js": "^10.1.2",
     "react": "^16.13.1",
     "react-async": "^10.0.1",
     "react-dom": "^16.13.1",
